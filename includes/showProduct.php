@@ -4,7 +4,7 @@
 $dbc = mysqli_connect('localhost', 'root', 'root', 'music_app')
 or die('Error connecting to MySQL server.');
 
-$query = "SELECT unique_id, product_name, product_price, product_desc, product_short_desc, product_img, product_category FROM my_products";
+$query = "SELECT unique_id, product_name, product_price, product_desc, upsell_data, product_img, product_category FROM my_products";
 $data = mysqli_query($dbc, $query);
 
 
@@ -13,6 +13,8 @@ $data = mysqli_query($dbc, $query);
 
     echo '<div class="col-md-3"><div class="panel panel-default">
   <div class="panel-body">';
+   echo '<img src=' . $row['product_img'] . ' width="100%"><br/>';
+
     echo  'unique_id: ' . $row['unique_id'] . '<br/>';
     
       echo 'product_name: ' . $row['product_name'] . '<br/>';
@@ -24,10 +26,10 @@ $data = mysqli_query($dbc, $query);
       echo 'product desc: ' . $row['product_desc'] . '<br/>';
     
     
-      echo 'product_short_desc: ' . $row['product_short_desc'] . '<br/>';
+      echo 'upsell_data: ' . $row['upsell_data'] . '<br/>';
     
   
-    //   echo 'product img: ' . $row['product_img'] . '<br/>';
+   
     
     
     echo 'product category ' . $row['product_category'] . '<br/>';
@@ -54,7 +56,7 @@ $data = mysqli_query($dbc, $query);
         <h4 class="modal-title" id="myModalLabel">Update Your Product Here</h4>
       </div>
       <div class="modal-body">
-       
+       <img src=' . $row['product_img'] . ' width="100%">
     <form method="post" action="updateProduct.php">
     <input class="form-control"type="hidden" name="unique_id" placeholder="product name" value="'. $row['unique_id'] .' "><br/>
     <input class="form-control"type="text" name="product_name" placeholder="product name" value="'. $row['product_name'] .' "><br/>
@@ -62,7 +64,7 @@ $data = mysqli_query($dbc, $query);
     
     <input class="form-control"type="text" name="product_price" placeholder="product price" value="' . $row['product_price'] .'"><br/>
     <input class="form-control"type="text-area" name="product_desc" placeholder="product desc" value="' . $row['product_desc'] . '"><br/>
-    <input class="form-control"type="text" name="product_short_desc" placeholder="product short desc" value="' . $row['product_short_desc'] . '"><br/>
+    <input class="form-control"type="text" name="upsell_data" placeholder="product short desc" value="' . $row['upsell_data'] . '"><br/>
     <input class="form-control"type="text" name="product_category" placeholder="product category" value="' . $row['product_category'] . '"><br/>
 
   

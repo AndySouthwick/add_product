@@ -10,7 +10,7 @@
 
     <input class="form-control"type="text" name="product_price" placeholder="product price" value=""><br/>
     <input class="form-control"type="text-area" name="product_desc" placeholder="product desc" value=""><br/>
-    <input class="form-control"type="text" name="product_short_desc" placeholder="product short desc" value=""><br/>
+    <input class="form-control"type="text" name="upsell_data" placeholder="upsell URL" value=""><br/>
     <input class="form-control"type="text" name="product_category" placeholder="product category" value=""><br/>
 
   
